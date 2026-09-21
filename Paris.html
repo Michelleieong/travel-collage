@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Paris Travel Journal</title>
+
+    <!-- TYPEWRITER -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- HANDWRITTEN -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f2ede1;
+        color: #29261f;
+        font-family: "Special Elite", monospace;
+      }
+
+      /* NAV */
+
+      nav {
+        width: 92%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 22px 0;
+
+        display: flex;
+        justify-content: space-between;
+
+        border-bottom: 1px solid #aaa294;
+
+        font-size: 11px;
+        letter-spacing: 1.5px;
+      }
+
+      nav a {
+        color: #29261f;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      /* HEADER */
+
+      header {
+        width: 92%;
+        max-width: 1200px;
+        margin: 55px auto 90px;
+      }
+
+      .chapter {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        margin: 15px 0 10px;
+
+        font-size: clamp(75px, 12vw, 165px);
+        line-height: 0.85;
+
+        font-weight: normal;
+        letter-spacing: -5px;
+      }
+
+      .header-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      .location {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .hand {
+        font-family: "Caveat", cursive;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      .intro {
+        width: 330px;
+        margin: 0;
+        transform: rotate(-3deg);
+      }
+
+      /* JOURNAL */
+
+      .journal {
+        width: 88%;
+        max-width: 1080px;
+        margin: auto;
+      }
+
+      .section {
+        margin-bottom: 145px;
+      }
+
+      .section-title {
+        margin-bottom: 35px;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 2px;
+      }
+
+      .section-title span {
+        font-family: "Caveat", cursive;
+        font-size: 23px;
+
+        transform: rotate(-3deg);
+      }
+
+      /* PARIS USES 10 COLUMNS
+         Antwerp used 12.
+         This gives Paris a different layout.
+      */
+
+      .paris-grid {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 18px;
+
+        align-items: start;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        margin-top: 6px;
+
+        font-size: 9px;
+        line-height: 1.4;
+      }
+
+      .type {
+        font-size: 10px;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+      }
+
+      /* =====================================
+         OPENING — 1–6
+      ===================================== */
+
+      .p1 {
+        grid-column: 1 / 5;
+      }
+
+      .p2 {
+        grid-column: 6 / 8;
+        margin-top: 65px;
+      }
+
+      .p3 {
+        grid-column: 8 / 11;
+        margin-top: 15px;
+      }
+
+      .opening-note {
+        grid-column: 5 / 8;
+        margin-top: 10px;
+
+        transform: rotate(-4deg);
+      }
+
+      .p4 {
+        grid-column: 2 / 4;
+        margin-top: 50px;
+      }
+
+      .p5 {
+        grid-column: 4 / 7;
+        margin-top: 100px;
+      }
+
+      .p6 {
+        grid-column: 8 / 10;
+        margin-top: 55px;
+      }
+
+      .opening-type {
+        grid-column: 1 / 4;
+        margin-top: 60px;
+      }
+
+      /* =====================================
+         WHAT I WORE — 7–12
+      ===================================== */
+
+      .p7 {
+        grid-column: 1 / 4;
+      }
+
+      .p8 {
+        grid-column: 4 / 6;
+        margin-top: 90px;
+      }
+
+      .p9 {
+        grid-column: 7 / 10;
+        margin-top: 20px;
+      }
+
+      .wear-note {
+        grid-column: 6 / 9;
+        margin-top: 20px;
+
+        transform: rotate(3deg);
+      }
+
+      .p10 {
+        grid-column: 2 / 5;
+        margin-top: 75px;
+      }
+
+      .p11 {
+        grid-column: 5 / 8;
+        margin-top: 20px;
+      }
+
+      .p12 {
+        grid-column: 8 / 11;
+        margin-top: 100px;
+      }
+
+      /* =====================================
+         AROUND THE CITY — 13–20
+      ===================================== */
+
+      .p13 {
+        grid-column: 1 / 5;
+      }
+
+      .p14 {
+        grid-column: 6 / 8;
+        margin-top: 100px;
+      }
+
+      .p15 {
+        grid-column: 8 / 11;
+        margin-top: 35px;
+      }
+
+      .city-note {
+        grid-column: 2 / 6;
+        margin-top: 25px;
+
+        transform: rotate(-2deg);
+      }
+
+      .p16 {
+        grid-column: 1 / 3;
+        margin-top: 80px;
+      }
+
+      .p17 {
+        grid-column: 3 / 6;
+        margin-top: 30px;
+      }
+
+      .p18 {
+        grid-column: 7 / 10;
+        margin-top: 110px;
+      }
+
+      .p19 {
+        grid-column: 2 / 5;
+        margin-top: 80px;
+      }
+
+      .p20 {
+        grid-column: 6 / 10;
+        margin-top: 25px;
+      }
+
+      /* =====================================
+         LITTLE THINGS — 21–27
+      ===================================== */
+
+      .p21 {
+        grid-column: 1 / 3;
+        margin-top: 50px;
+      }
+
+      .p22 {
+        grid-column: 3 / 6;
+      }
+
+      .p23 {
+        grid-column: 7 / 9;
+        margin-top: 85px;
+      }
+
+      .p24 {
+        grid-column: 9 / 11;
+        margin-top: 25px;
+      }
+
+      .little-note {
+        grid-column: 4 / 8;
+        margin-top: 20px;
+
+        transform: rotate(-3deg);
+      }
+
+      .p25 {
+        grid-column: 2 / 5;
+        margin-top: 85px;
+      }
+
+      .p26 {
+        grid-column: 5 / 8;
+        margin-top: 25px;
+      }
+
+      .p27 {
+        grid-column: 8 / 11;
+        margin-top: 100px;
+      }
+
+      .ending {
+        grid-column: 6 / 10;
+
+        margin-top: 50px;
+
+        text-align: right;
+        font-size: 31px;
+
+        transform: rotate(-2deg);
+      }
+
+      /* FOOTER */
+
+      footer {
+        width: 88%;
+        max-width: 1080px;
+
+        margin: 30px auto 0;
+        padding: 25px 0 45px;
+
+        border-top: 1px solid #aaa294;
+
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      footer a {
+        color: #29261f;
+      }
+
+      @media (max-width: 700px) {
+        .paris-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .paris-grid > * {
+          grid-column: auto;
+          margin-top: 15px;
+        }
+
+        h1 {
+          letter-spacing: -2px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- NAV -->
+
+    <nav>
+      <a href="index.html">ANTWERP</a>
+      <a href="paris.html">PARIS</a>
+      <a href="cusco.html">CUSCO</a>
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+      <p class="chapter">TRAVEL JOURNAL / 02</p>
+
+      <h1>PARIS</h1>
+
+      <div class="header-bottom">
+
+        <p class="location">FRANCE</p>
+
+        <p class="hand intro">
+          notes from Paris ♡
+        </p>
+
+      </div>
+
+    </header>
+
+
+    <main class="journal">
+
+      <!-- ================================
+           DAYS IN PARIS — 1–6
+      ================================= -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>DAYS IN PARIS</h2>
+          <span>somewhere around here...</span>
+        </div>
+
+        <div class="paris-grid">
+
+          <figure class="p1">
+            <img
+              src="images/Paris1.jpg"
+              alt="A photograph from my trip to Paris"
+            />
+            <figcaption>PARIS, FRANCE</figcaption>
+          </figure>
+
+          <figure class="p2">
+            <img
+              src="images/Paris2.jpg"
+              alt="A personal photograph from Paris"
+            />
+          </figure>
+
+          <figure class="p3">
+            <img
+              src="images/Paris3.jpg"
+              alt="A personal photograph from Paris"
+            />
+          </figure>
+
+          <p class="hand opening-note">
+            Paris →
+          </p>
+
+          <figure class="p4">
+            <img
+              src="images/Paris4.jpg"
+              alt="A personal photograph from Paris"
+            />
+          </figure>
+
+          <figure class="p5">
+            <img
+              src="images/Paris5.jpg"
+              alt="A personal photograph from Paris"
+            />
+          </figure>
+
+          <figure class="p6">
+            <img
+              src="images/Paris6.jpg"
+              alt="A personal photograph from Paris"
+            />
+          </figure>
+
+          <p class="type opening-type">
+            PARIS / FRANCE / 02
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================
+           WHAT I WORE — 7–12
+      ================================= -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>WHAT I WORE</h2>
+          <span>Paris outfits</span>
+        </div>
+
+        <div class="paris-grid">
+
+          <figure class="p7">
+            <img src="images/Paris7.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p8">
+            <img src="images/Paris8.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p9">
+            <img src="images/Paris9.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <p class="hand wear-note">
+            what I wore
+          </p>
+
+          <figure class="p10">
+            <img src="images/Paris10.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p11">
+            <img src="images/Paris11.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p12">
+            <img src="images/Paris12.jpg" alt="A photograph from Paris" />
+          </figure>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================
+           AROUND THE CITY — 13–20
+      ================================= -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>AROUND THE CITY</h2>
+          <span>walking, looking, stopping</span>
+        </div>
+
+        <div class="paris-grid">
+
+          <figure class="p13">
+            <img src="images/Paris13.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p14">
+            <img src="images/Paris14.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p15">
+            <img src="images/Paris15.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <p class="hand city-note">
+            around Paris →
+          </p>
+
+          <figure class="p16">
+            <img src="images/Paris16.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p17">
+            <img src="images/Paris17.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p18">
+            <img src="images/Paris18.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p19">
+            <img src="images/Paris19.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p20">
+            <img src="images/Paris20.jpg" alt="A photograph from Paris" />
+          </figure>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================
+           LITTLE THINGS — 21–27
+      ================================= -->
+
+      <section class="section">
+
+        <div class="section-title">
+          <h2>LITTLE THINGS</h2>
+          <span>from my camera roll</span>
+        </div>
+
+        <div class="paris-grid">
+
+          <figure class="p21">
+            <img src="images/Paris21.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p22">
+            <img src="images/Paris22.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p23">
+            <img src="images/Paris23.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p24">
+            <img src="images/Paris24.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <p class="hand little-note">
+            things I wanted to remember
+          </p>
+
+          <figure class="p25">
+            <img src="images/Paris25.jpg" alt="A photograph from Paris" />
+          </figure>
+
+          <figure class="p26">
+            <img src="images/Paris26.jpg" alt="A photograph from Paris" />
+          </figure>
+
+
+          <p class="hand ending">
+            Paris ♡
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <a href="index.html">
+        ← ANTWERP
+      </a>
+
+      <span>02 / PARIS</span>
+
+      <a href="cusco.html">
+        CUSCO →
+      </a>
+
+    </footer>
+
+  </body>
+</html>
