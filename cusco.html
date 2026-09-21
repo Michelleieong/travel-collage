@@ -1,865 +1,1663 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Cusco Travel Journal</title>
+  <title>Cusco — Travel Journal</title>
 
-    <!-- TYPEWRITER -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- HANDWRITTEN -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
 
-    <style>
-      * {
-        box-sizing: border-box;
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e7dfcf;
+      color: #29251f;
+
+      font-family: "Special Elite", monospace;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    /* ==========================================
+       NAV
+    ========================================== */
+
+    nav {
+      width: 92%;
+      max-width: 1180px;
+
+      margin: auto;
+      padding: 21px 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 10px;
+      letter-spacing: 1.6px;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      font-style: italic;
+    }
+
+
+    /* ==========================================
+       GENERAL
+    ========================================== */
+
+    main {
+      width: 88%;
+      max-width: 1080px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 175px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .typewriter {
+      font-family: "Special Elite", monospace;
+    }
+
+    .hand {
+      margin: 0;
+
+      font-family: "Caveat", cursive;
+      font-size: 27px;
+      line-height: 1.05;
+    }
+
+    .serif {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      line-height: 0.85;
+    }
+
+    .tiny {
+      font-size: 8px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+    .section-head {
+      margin-bottom: 42px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .section-head p {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: 7px;
+
+      font-size: 7px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+
+
+    /* ==========================================
+       COVER
+    ========================================== */
+
+    .cover {
+      width: 92%;
+      max-width: 1180px;
+
+      min-height: 760px;
+
+      margin: auto;
+      padding: 45px 0 120px;
+
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 22px;
+
+      align-items: start;
+    }
+
+    .issue {
+      grid-column: 1 / 3;
+
+      margin: 0;
+
+      font-size: 9px;
+      line-height: 1.8;
+      letter-spacing: 1.5px;
+    }
+
+    .cover-title {
+      grid-column: 1 / 9;
+
+      margin: 25px 0 -45px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(130px, 19vw, 225px);
+      line-height: 0.7;
+      letter-spacing: -8px;
+
+      position: relative;
+      z-index: 3;
+    }
+
+    .cover1 {
+      grid-column: 1 / 6;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover2 {
+      grid-column: 6 / 9;
+
+      margin-top: 125px;
+    }
+
+    .cover-hand {
+      grid-column: 5 / 9;
+
+      margin: -20px 0 0;
+
+      font-family: "Caveat", cursive;
+      font-size: 34px;
+      line-height: 1;
+
+      transform: rotate(-4deg);
+
+      position: relative;
+      z-index: 4;
+    }
+
+    .cover-info {
+      grid-column: 1 / 4;
+
+      margin-top: 35px;
+
+      font-size: 8px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+    }
+
+    .cover-note {
+      grid-column: 6 / 9;
+
+      margin-top: 35px;
+
+      font-family: "Caveat", cursive;
+      font-size: 25px;
+
+      transform: rotate(3deg);
+    }
+
+
+    /* ==========================================
+       ALPACA
+       3 / 4 / 5
+
+       NO LINES
+       NO FORMAL SECTION DIVIDER
+    ========================================== */
+
+    .alpaca {
+      margin-top: 40px;
+      margin-bottom: 190px;
+    }
+
+    .alpaca-intro {
+      width: 85%;
+      margin: 0 auto 30px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .alpaca-intro h2 {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: 66px;
+      line-height: 0.9;
+    }
+
+    .alpaca-intro p {
+      margin: 0 0 5px;
+
+      font-family: "Caveat", cursive;
+      font-size: 24px;
+
+      transform: rotate(-4deg);
+    }
+
+    .alpaca3 {
+      grid-column: 1 / 4;
+    }
+
+    .alpaca4 {
+      grid-column: 4 / 7;
+
+      margin-top: 85px;
+    }
+
+    .alpaca5 {
+      grid-column: 7 / 9;
+
+      margin-top: 15px;
+    }
+
+    .alpaca-hand {
+      grid-column: 4 / 8;
+
+      margin-top: 25px;
+
+      font-family: "Caveat", cursive;
+      font-size: 28px;
+
+      transform: rotate(-3deg);
+    }
+
+    .alpaca-small {
+      grid-column: 1 / 3;
+
+      margin-top: 25px;
+
+      font-size: 8px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+
+    /* ==========================================
+       6 / 7 / 12
+    ========================================== */
+
+    .journey6 {
+      grid-column: 1 / 4;
+    }
+
+    .journey7 {
+      grid-column: 5 / 9;
+
+      margin-top: 95px;
+    }
+
+    .journey12 {
+      grid-column: 2 / 6;
+
+      margin-top: 110px;
+    }
+
+    .journey-hand {
+      grid-column: 5 / 9;
+
+      margin-top: 125px;
+
+      font-family: "Caveat", cursive;
+      font-size: 34px;
+
+      transform: rotate(-5deg);
+    }
+
+    .journey-small {
+      grid-column: 1 / 3;
+
+      margin-top: 20px;
+
+      font-size: 8px;
+      line-height: 1.8;
+    }
+
+
+    /* ==========================================
+       COLORS OF THE ANDES
+       8 / 9 / 10 / 11
+    ========================================== */
+
+    .andes {
+      width: 92%;
+      max-width: 1180px;
+
+      margin: 0 auto 190px;
+    }
+
+    .andes-heading {
+      margin-bottom: 38px;
+
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 20px;
+
+      align-items: end;
+    }
+
+    .andes-index {
+      grid-column: 1 / 3;
+
+      margin: 0 0 7px;
+
+      font-family: "Special Elite", monospace;
+
+      font-size: 8px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+    .andes-title {
+      grid-column: 2 / 8;
+
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(75px, 12vw, 140px);
+      line-height: 0.72;
+      letter-spacing: -3px;
+
+      transform: rotate(-2deg);
+    }
+
+    .andes-number {
+      grid-column: 8 / 9;
+
+      margin: 0 0 8px;
+
+      text-align: right;
+
+      font-family: "Special Elite", monospace;
+
+      font-size: 9px;
+    }
+
+    .andes-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 18px;
+
+      align-items: start;
+    }
+
+    .andes8 {
+      grid-column: 1 / 5;
+    }
+
+    .andes9 {
+      grid-column: 5 / 9;
+    }
+
+    .andes10 {
+      grid-column: 1 / 5;
+
+      margin-top: 18px;
+    }
+
+    .andes11 {
+      grid-column: 5 / 9;
+
+      margin-top: 18px;
+    }
+
+    .andes-hand {
+      width: 88%;
+
+      margin: 22px auto 0;
+
+      font-family: "Caveat", cursive;
+      font-size: 26px;
+
+      text-align: right;
+
+      transform: rotate(-2deg);
+    }
+
+
+    /* ==========================================
+       TRAIN
+       13
+    ========================================== */
+
+    .train13 {
+      grid-column: 2 / 7;
+    }
+
+    .train-title {
+      grid-column: 1 / 9;
+
+      margin: -30px 0 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(75px, 11vw, 125px);
+
+      text-align: center;
+
+      transform: rotate(-3deg);
+    }
+
+    .train-copy {
+      grid-column: 6 / 9;
+
+      margin-top: 20px;
+
+      font-size: 8px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+    }
+
+    .train-hand {
+      grid-column: 2 / 5;
+
+      margin-top: 25px;
+
+      transform: rotate(-3deg);
+    }
+
+
+    /* ==========================================
+       AGUAS CALIENTES
+       14 / 15 / 16
+    ========================================== */
+
+    .aguas-title {
+      grid-column: 1 / 9;
+
+      margin: 0 0 -45px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(70px, 11vw, 125px);
+
+      text-align: right;
+
+      position: relative;
+      z-index: 0;
+    }
+
+    .aguas14 {
+      grid-column: 1 / 4;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .aguas15 {
+      grid-column: 4 / 7;
+
+      margin-top: 105px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .aguas16 {
+      grid-column: 7 / 9;
+
+      margin-top: 20px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .aguas-info {
+      grid-column: 1 / 4;
+
+      margin-top: 30px;
+
+      font-size: 8px;
+      line-height: 1.9;
+    }
+
+    .aguas-hand {
+      grid-column: 5 / 9;
+
+      margin-top: 25px;
+
+      transform: rotate(-3deg);
+    }
+
+
+    /* ==========================================
+       MACHU PICCHU
+       17–23
+    ========================================== */
+
+    .machu-name {
+      margin: 0 0 40px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(95px, 15vw, 170px);
+      line-height: 0.68;
+      letter-spacing: -5px;
+    }
+
+    .machu17 {
+      grid-column: 1 / 6;
+    }
+
+    .machu18 {
+      grid-column: 6 / 9;
+
+      margin-top: 125px;
+    }
+
+    .machu19 {
+      grid-column: 2 / 5;
+
+      margin-top: 100px;
+    }
+
+    .machu20 {
+      grid-column: 5 / 9;
+
+      margin-top: 25px;
+    }
+
+    .machu-hand-big {
+      grid-column: 1 / 9;
+
+      margin: 15px 0 -20px;
+
+      font-family: "Caveat", cursive;
+      font-size: 50px;
+
+      text-align: center;
+
+      transform: rotate(-4deg);
+    }
+
+    .machu21 {
+      grid-column: 1 / 4;
+
+      margin-top: 80px;
+    }
+
+    .machu22 {
+      grid-column: 4 / 7;
+
+      margin-top: 15px;
+    }
+
+    .machu23 {
+      grid-column: 7 / 9;
+
+      margin-top: 105px;
+    }
+
+    .machu-copy {
+      grid-column: 5 / 9;
+
+      margin-top: 45px;
+
+      font-size: 8px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+    }
+
+    .machu-note {
+      grid-column: 2 / 6;
+
+      margin-top: 25px;
+
+      font-size: 30px;
+
+      transform: rotate(-3deg);
+    }
+
+
+    /* ==========================================
+       CLOCK TOWER
+       26–29
+    ========================================== */
+
+    .tower-title {
+      grid-column: 1 / 9;
+
+      margin: 0 0 -35px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: clamp(70px, 11vw, 120px);
+
+      transform: rotate(-2deg);
+
+      position: relative;
+      z-index: 0;
+    }
+
+    .tower26 {
+      grid-column: 1 / 5;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .tower27 {
+      grid-column: 5 / 9;
+
+      margin-top: 75px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .tower28 {
+      grid-column: 2 / 5;
+
+      margin-top: 30px;
+    }
+
+    .tower29 {
+      grid-column: 5 / 8;
+
+      margin-top: 105px;
+    }
+
+    .tower-info {
+      grid-column: 1 / 4;
+
+      margin-top: 40px;
+
+      font-size: 8px;
+      line-height: 1.9;
+    }
+
+    .tower-hand {
+      grid-column: 5 / 9;
+
+      margin-top: 25px;
+
+      transform: rotate(-4deg);
+    }
+
+
+    /* ==========================================
+       FRAGMENTS
+       24 / 25 / 30–39
+    ========================================== */
+
+    .frag24 {
+      grid-column: 1 / 4;
+    }
+
+    .frag25 {
+      grid-column: 5 / 9;
+
+      margin-top: 90px;
+    }
+
+    .fragment-title {
+      grid-column: 2 / 8;
+
+      margin: 20px 0 -10px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+
+      font-size: 90px;
+
+      text-align: center;
+
+      transform: rotate(3deg);
+    }
+
+    .frag30 {
+      grid-column: 1 / 4;
+
+      margin-top: 75px;
+    }
+
+    .frag31 {
+      grid-column: 4 / 7;
+
+      margin-top: 20px;
+    }
+
+    .frag32 {
+      grid-column: 7 / 9;
+
+      margin-top: 110px;
+    }
+
+    .frag33 {
+      grid-column: 2 / 5;
+
+      margin-top: 105px;
+    }
+
+    .frag34 {
+      grid-column: 5 / 9;
+
+      margin-top: 20px;
+    }
+
+    .frag35 {
+      grid-column: 1 / 4;
+
+      margin-top: 120px;
+    }
+
+    .frag36 {
+      grid-column: 4 / 7;
+
+      margin-top: 25px;
+    }
+
+    .frag37 {
+      grid-column: 7 / 9;
+
+      margin-top: 105px;
+    }
+
+    .frag38 {
+      grid-column: 2 / 6;
+
+      margin-top: 100px;
+    }
+
+    .frag39 {
+      grid-column: 6 / 9;
+
+      margin-top: 30px;
+    }
+
+    .fragment-hand {
+      grid-column: 2 / 6;
+
+      margin-top: 30px;
+
+      transform: rotate(-4deg);
+    }
+
+
+    /* ==========================================
+       40–47
+    ========================================== */
+
+    .last40 {
+      grid-column: 1 / 5;
+    }
+
+    .last41 {
+      grid-column: 6 / 9;
+
+      margin-top: 105px;
+    }
+
+    .last42 {
+      grid-column: 2 / 5;
+
+      margin-top: 95px;
+    }
+
+    .last43 {
+      grid-column: 5 / 9;
+
+      margin-top: 20px;
+    }
+
+    .last-hand {
+      grid-column: 1 / 9;
+
+      margin: 20px 0 -15px;
+
+      font-family: "Caveat", cursive;
+      font-size: 48px;
+
+      text-align: center;
+
+      transform: rotate(-4deg);
+    }
+
+    .last44 {
+      grid-column: 1 / 4;
+
+      margin-top: 80px;
+    }
+
+    .last45 {
+      grid-column: 4 / 7;
+
+      margin-top: 20px;
+    }
+
+    .last46 {
+      grid-column: 7 / 9;
+
+      margin-top: 110px;
+    }
+
+    .last47 {
+      grid-column: 3 / 7;
+
+      margin-top: 100px;
+    }
+
+    .ending {
+      grid-column: 3 / 8;
+
+      margin-top: 45px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 70px;
+
+      transform: rotate(-3deg);
+    }
+
+    .ending-small {
+      grid-column: 6 / 9;
+
+      margin-top: 25px;
+
+      font-family: "Caveat", cursive;
+      font-size: 25px;
+
+      transform: rotate(2deg);
+    }
+
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+
+    footer {
+      width: 88%;
+      max-width: 1080px;
+
+      margin: auto;
+      padding: 25px 0 50px;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media (max-width: 700px) {
+
+      .cover {
+        min-height: auto;
       }
 
-      body {
-        margin: 0;
-        background: #f2ede1;
-        color: #29261f;
-        font-family: "Special Elite", monospace;
+      .cover > *,
+      .grid > * {
+        grid-column: 1 / -1;
       }
 
-      /* NAV */
-
-      nav {
-        width: 92%;
-        max-width: 1200px;
-        margin: auto;
-        padding: 22px 0;
-
-        display: flex;
-        justify-content: space-between;
-
-        border-bottom: 1px solid #aaa294;
-
-        font-size: 11px;
-        letter-spacing: 1.5px;
+      .cover-title {
+        font-size: 95px;
+        letter-spacing: -4px;
       }
 
-      nav a {
-        color: #29261f;
-        text-decoration: none;
+      .cover1,
+      .cover2,
+      .cover-hand {
+        margin-top: 20px;
       }
 
-      nav a:hover {
-        text-decoration: underline;
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      /* HEADER */
-
-      header {
-        width: 92%;
-        max-width: 1200px;
-        margin: 55px auto 90px;
-      }
-
-      .chapter {
-        font-size: 11px;
-        letter-spacing: 2px;
-      }
-
-      h1 {
-        margin: 15px 0 10px;
-
-        font-size: clamp(75px, 11vw, 155px);
-        line-height: 0.85;
-
-        font-weight: normal;
-        letter-spacing: -5px;
-      }
-
-      .header-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-      }
-
-      .location {
-        font-size: 11px;
-        letter-spacing: 2px;
-      }
-
-      .hand {
-        font-family: "Caveat", cursive;
-        font-size: 26px;
-        line-height: 1.1;
-      }
-
-      .intro {
-        width: 330px;
-        margin: 0;
-        transform: rotate(-3deg);
-      }
-
-      /* JOURNAL */
-
-      .journal {
-        width: 88%;
-        max-width: 1100px;
-        margin: auto;
-      }
-
-      .section {
-        margin-bottom: 150px;
-      }
-
-      .section-title {
-        margin-bottom: 40px;
-
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .section-title h2 {
-        margin: 0;
-
-        font-size: 16px;
-        font-weight: normal;
-        letter-spacing: 2px;
-      }
-
-      .section-title span {
-        font-family: "Caveat", cursive;
-        font-size: 23px;
-
-        transform: rotate(-3deg);
-      }
-
-      /*
-        CUSCO = 8 COLUMN GRID
-        Antwerp = 12
-        Paris = 10
-
-        So all three pages have different layouts.
-      */
-
-      .cusco-grid {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 22px;
-
-        align-items: start;
-      }
-
-      figure {
-        margin: 0;
-      }
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      figcaption {
-        margin-top: 6px;
-
-        font-size: 9px;
-        line-height: 1.4;
-      }
-
-      .type {
-        font-size: 10px;
-        line-height: 1.7;
-        letter-spacing: 0.5px;
-      }
-
-      /* ========================================
-         OPENING 1–7
-      ======================================== */
-
-      .p1 {
-        grid-column: 1 / 5;
-      }
-
-      .p2 {
-        grid-column: 6 / 9;
-        margin-top: 70px;
-      }
-
-      .opening-note {
-        grid-column: 4 / 8;
+      .grid figure {
+        grid-column: auto;
         margin-top: 15px;
-        transform: rotate(-3deg);
       }
 
-      .p3 {
-        grid-column: 1 / 3;
-        margin-top: 60px;
+      .alpaca-intro {
+        width: 100%;
       }
 
-      .p4 {
-        grid-column: 3 / 6;
-        margin-top: 20px;
+      .alpaca-intro h2 {
+        font-size: 48px;
       }
 
-      .p5 {
-        grid-column: 7 / 9;
-        margin-top: 110px;
+      .andes-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .p6 {
-        grid-column: 2 / 5;
-        margin-top: 70px;
+      .andes-grid figure {
+        grid-column: auto;
+        margin-top: 0;
       }
 
-      .p7 {
-        grid-column: 5 / 8;
-        margin-top: 120px;
+      .andes-title {
+        grid-column: 1 / 9;
+        font-size: 65px;
       }
 
-      /* ========================================
-         DAYS OUT 8–16
-      ======================================== */
-
-      .p8 {
-        grid-column: 1 / 4;
-      }
-
-      .p9 {
-        grid-column: 5 / 7;
-        margin-top: 80px;
-      }
-
-      .p10 {
-        grid-column: 7 / 9;
-        margin-top: 25px;
-      }
-
-      .days-note {
-        grid-column: 2 / 6;
-        margin-top: 25px;
-        transform: rotate(2deg);
-      }
-
-      .p11 {
-        grid-column: 1 / 3;
-        margin-top: 90px;
-      }
-
-      .p12 {
-        grid-column: 3 / 6;
-        margin-top: 30px;
-      }
-
-      .p13 {
-        grid-column: 6 / 9;
-        margin-top: 120px;
-      }
-
-      .p14 {
-        grid-column: 2 / 4;
-        margin-top: 70px;
-      }
-
-      .p15 {
-        grid-column: 4 / 7;
-        margin-top: 130px;
-      }
-
-      .p16 {
-        grid-column: 7 / 9;
-        margin-top: 40px;
-      }
-
-      /* ========================================
-         WHAT I SAW 17–25
-      ======================================== */
-
-      .p17 {
-        grid-column: 1 / 5;
-      }
-
-      .p18 {
-        grid-column: 6 / 9;
-        margin-top: 90px;
-      }
-
-      .saw-note {
-        grid-column: 4 / 8;
-        margin-top: 20px;
-        transform: rotate(-3deg);
-      }
-
-      .p19 {
-        grid-column: 1 / 3;
-        margin-top: 90px;
-      }
-
-      .p20 {
-        grid-column: 3 / 6;
-        margin-top: 25px;
-      }
-
-      .p21 {
-        grid-column: 6 / 8;
-        margin-top: 130px;
-      }
-
-      .p22 {
-        grid-column: 2 / 5;
-        margin-top: 100px;
-      }
-
-      .p23 {
-        grid-column: 5 / 9;
-        margin-top: 30px;
-      }
-
-      .p24 {
-        grid-column: 1 / 3;
-        margin-top: 110px;
-      }
-
-      .p25 {
-        grid-column: 4 / 7;
-        margin-top: 80px;
-      }
-
-      /* ========================================
-         LITTLE THINGS 26–35
-      ======================================== */
-
-      .p26 {
-        grid-column: 1 / 3;
-        margin-top: 40px;
-      }
-
-      .p27 {
-        grid-column: 3 / 5;
-      }
-
-      .p28 {
-        grid-column: 6 / 9;
-        margin-top: 70px;
-      }
-
-      .little-note {
-        grid-column: 3 / 7;
-        margin-top: 20px;
-        transform: rotate(3deg);
-      }
-
-      .p29 {
-        grid-column: 1 / 4;
-        margin-top: 100px;
-      }
-
-      .p30 {
-        grid-column: 4 / 6;
-        margin-top: 40px;
-      }
-
-      .p31 {
-        grid-column: 7 / 9;
-        margin-top: 130px;
-      }
-
-      .p32 {
-        grid-column: 2 / 4;
-        margin-top: 80px;
-      }
-
-      .p33 {
-        grid-column: 4 / 7;
-        margin-top: 140px;
-      }
-
-      .p34 {
-        grid-column: 7 / 9;
-        margin-top: 50px;
-      }
-
-      .p35 {
-        grid-column: 2 / 6;
-        margin-top: 100px;
-      }
-
-      /* ========================================
-         LAST DAYS 36–47
-      ======================================== */
-
-      .p36 {
-        grid-column: 1 / 4;
-      }
-
-      .p37 {
-        grid-column: 5 / 7;
-        margin-top: 100px;
-      }
-
-      .p38 {
-        grid-column: 7 / 9;
-        margin-top: 35px;
-      }
-
-      .last-note {
-        grid-column: 3 / 7;
-        margin-top: 20px;
-        transform: rotate(-3deg);
-      }
-
-      .p39 {
-        grid-column: 1 / 3;
-        margin-top: 100px;
-      }
-
-      .p40 {
-        grid-column: 3 / 6;
-        margin-top: 30px;
-      }
-
-      .p41 {
-        grid-column: 6 / 9;
-        margin-top: 120px;
-      }
-
-      .p42 {
-        grid-column: 2 / 5;
-        margin-top: 100px;
-      }
-
-      .p43 {
-        grid-column: 5 / 8;
-        margin-top: 40px;
-      }
-
-      .p44 {
-        grid-column: 1 / 3;
-        margin-top: 130px;
-      }
-
-      .p45 {
-        grid-column: 3 / 6;
-        margin-top: 70px;
-      }
-
-      .p46 {
-        grid-column: 6 / 9;
-        margin-top: 150px;
-      }
-
-      .p47 {
-        grid-column: 2 / 7;
-        margin-top: 100px;
-      }
-
+      .serif,
+      .train-title,
+      .aguas-title,
+      .tower-title,
+      .fragment-title,
       .ending {
-        grid-column: 5 / 9;
-
-        margin-top: 35px;
-
-        text-align: right;
-        font-size: 31px;
-
-        transform: rotate(-2deg);
+        font-size: 55px;
       }
 
-      /* FOOTER */
+    }
 
-      footer {
-        width: 88%;
-        max-width: 1100px;
-
-        margin: 30px auto 0;
-        padding: 25px 0 45px;
-
-        border-top: 1px solid #aaa294;
-
-        display: flex;
-        justify-content: space-between;
-
-        font-size: 10px;
-        letter-spacing: 1px;
-      }
-
-      footer a {
-        color: #29261f;
-      }
-
-      @media (max-width: 700px) {
-        .cusco-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .cusco-grid > * {
-          grid-column: auto;
-          margin-top: 15px;
-        }
-
-        h1 {
-          letter-spacing: -2px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <!-- NAV -->
-
-    <nav>
-      <a href="index.html">ANTWERP</a>
-      <a href="paris.html">PARIS</a>
-      <a href="cusco.html">CUSCO</a>
-    </nav>
+  </style>
+</head>
 
 
-    <!-- HEADER -->
+<body>
 
-    <header>
 
-      <p class="chapter">TRAVEL JOURNAL / 03</p>
+  <nav>
+    <a href="index.html">ANTWERP</a>
+    <a href="paris.html">PARIS</a>
+    <a href="cusco.html">CUSCO</a>
+  </nav>
 
-      <h1>CUSCO</h1>
 
-      <div class="header-bottom">
 
-        <p class="location">PERU</p>
+  <!-- COVER -->
 
-        <p class="hand intro">
-          notes from Peru ♡
+  <header class="cover">
+
+    <p class="issue">
+      TRAVEL JOURNAL<br>
+      VOL. 03 / CUSCO<br>
+      PERU
+    </p>
+
+    <h1 class="cover-title">
+      Cusco
+    </h1>
+
+    <figure class="cover1">
+      <img
+        src="images/Cusco1.jpg"
+        alt="A photograph from my journey in Cusco"
+      >
+    </figure>
+
+    <figure class="cover2">
+      <img
+        src="images/Cusco2.jpg"
+        alt="A photograph from my journey in Cusco"
+      >
+    </figure>
+
+    <p class="cover-hand">
+      a brave little journey through Peru
+    </p>
+
+    <p class="cover-info">
+      CUSCO / PERU<br>
+      PERSONAL ARCHIVE<br>
+      TRAVEL JOURNAL / 03
+    </p>
+
+    <p class="cover-note">
+      mountains, long roads & memories
+    </p>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ALPACAS — NO DIVIDER LINE -->
+
+    <section class="alpaca">
+
+      <div class="alpaca-intro">
+
+        <h2>
+          hello, alpacas
+        </h2>
+
+        <p>
+          first days in Cusco
         </p>
 
       </div>
 
-    </header>
 
+      <div class="grid">
 
-    <main class="journal">
+        <figure class="alpaca3">
+          <img
+            src="images/Cusco3.jpg"
+            alt="A photograph of me with alpacas in Cusco"
+          >
+        </figure>
 
-      <!-- ========================================
-           OPENING 1–7
-      ======================================== -->
+        <figure class="alpaca4">
+          <img
+            src="images/Cusco4.jpg"
+            alt="A photograph of me with alpacas in Cusco"
+          >
+        </figure>
 
-      <section class="section">
+        <figure class="alpaca5">
+          <img
+            src="images/Cusco5.jpg"
+            alt="A photograph of me with alpacas in Cusco"
+          >
+        </figure>
 
-        <div class="cusco-grid">
+        <p class="alpaca-small">
+          CUSCO, PERU<br>
+          03 / 04 / 05
+        </p>
 
-          <figure class="p1">
-            <img
-              src="images/Cusco1.jpg"
-              alt="A photograph from my trip to Cusco"
-            />
-            <figcaption>CUSCO, PERU</figcaption>
-          </figure>
+        <p class="alpaca-hand">
+          met some new friends on my first days here ♡
+        </p>
 
-          <figure class="p2">
-            <img src="images/Cusco2.jpg" alt="A photograph from Cusco" />
-          </figure>
+      </div>
 
-          <p class="hand opening-note">
-            Cusco →
-          </p>
+    </section>
 
-          <figure class="p3">
-            <img src="images/Cusco3.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p4">
-            <img src="images/Cusco4.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p5">
-            <img src="images/Cusco5.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <!-- 6 / 7 / 12 -->
 
-          <figure class="p6">
-            <img src="images/Cusco6.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <section>
 
-          <figure class="p7">
-            <img src="images/Cusco7.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <div class="grid">
 
-        </div>
+        <figure class="journey6">
+          <img
+            src="images/Cusco6.jpg"
+            alt="A photograph from my journey in Cusco"
+          >
+        </figure>
 
-      </section>
+        <figure class="journey7">
+          <img
+            src="images/Cusco7.jpg"
+            alt="A photograph from my journey in Cusco"
+          >
+        </figure>
 
+        <figure class="journey12">
+          <img
+            src="images/Cusco12.jpg"
+            alt="A photograph from my journey in Cusco"
+          >
+        </figure>
 
-      <!-- ========================================
-           DAYS OUT 8–16
-      ======================================== -->
+        <p class="journey-small">
+          CUSCO<br>
+          SOMEWHERE ALONG THE WAY
+        </p>
 
-      <section class="section">
+        <p class="journey-hand">
+          no idea what was coming next...
+        </p>
 
-        <div class="section-title">
-          <h2>DAYS OUT</h2>
-          <span>somewhere in Peru</span>
-        </div>
+      </div>
 
-        <div class="cusco-grid">
+    </section>
 
-          <figure class="p8">
-            <img src="images/Cusco8.jpg" alt="A photograph from Cusco" />
-          </figure>
+  </main>
 
-          <figure class="p9">
-            <img src="images/Cusco9.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p10">
-            <img src="images/Cusco10.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <p class="hand days-note">
-            days around Cusco
-          </p>
+  <!-- COLORS OF THE ANDES -->
 
-          <figure class="p11">
-            <img src="images/Cusco11.jpg" alt="A photograph from Cusco" />
-          </figure>
+  <section class="andes">
 
-          <figure class="p12">
-            <img src="images/Cusco12.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <div class="andes-heading">
 
-          <figure class="p13">
-            <img src="images/Cusco13.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <p class="andes-index">
+        VISUAL NOTES<br>
+        CUSCO / PERU
+      </p>
 
-          <figure class="p14">
-            <img src="images/Cusco14.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <h2 class="andes-title">
+        Colors of the Andes
+      </h2>
 
-          <figure class="p15">
-            <img src="images/Cusco15.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <p class="andes-number">
+        08—11
+      </p>
 
-          <figure class="p16">
-            <img src="images/Cusco16.jpg" alt="A photograph from Cusco" />
-          </figure>
+    </div>
 
-        </div>
 
-      </section>
+    <div class="andes-grid">
 
+      <figure class="andes8">
+        <img
+          src="images/Cusco8.jpg"
+          alt="Colors of the Andes in Cusco"
+        >
+      </figure>
 
-      <!-- ========================================
-           WHAT I SAW 17–25
-      ======================================== -->
+      <figure class="andes9">
+        <img
+          src="images/Cusco9.jpg"
+          alt="Colors of the Andes in Cusco"
+        >
+      </figure>
 
-      <section class="section">
+      <figure class="andes10">
+        <img
+          src="images/Cusco10.jpg"
+          alt="Colors of the Andes in Cusco"
+        >
+      </figure>
 
-        <div class="section-title">
-          <h2>WHAT I SAW</h2>
-          <span>from my camera roll</span>
-        </div>
+      <figure class="andes11">
+        <img
+          src="images/Cusco11.jpg"
+          alt="Colors of the Andes in Cusco"
+        >
+      </figure>
 
-        <div class="cusco-grid">
+    </div>
 
-          <figure class="p17">
-            <img src="images/Cusco17.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <p class="andes-hand">
+      every color felt a little brighter up here
+    </p>
 
-          <figure class="p18">
-            <img src="images/Cusco18.jpg" alt="A photograph from Cusco" />
-          </figure>
+  </section>
 
-          <p class="hand saw-note">
-            looking around →
-          </p>
 
-          <figure class="p19">
-            <img src="images/Cusco19.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p20">
-            <img src="images/Cusco20.jpg" alt="A photograph from Cusco" />
-          </figure>
+  <main>
 
-          <figure class="p21">
-            <img src="images/Cusco21.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p22">
-            <img src="images/Cusco22.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <!-- TRAIN TO MACHU PICCHU -->
 
-          <figure class="p23">
-            <img src="images/Cusco23.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <section>
 
-          <figure class="p24">
-            <img src="images/Cusco24.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <div class="section-head">
+        <h2>THE WAY TO MACHU PICCHU</h2>
+        <p>13</p>
+      </div>
 
-          <figure class="p25">
-            <img src="images/Cusco25.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <div class="grid">
 
-        </div>
+        <figure class="train13">
+          <img
+            src="images/Cusco13.jpg"
+            alt="The train ride to Machu Picchu"
+          >
+        </figure>
 
-      </section>
+        <p class="train-title">
+          on the way
+        </p>
 
+        <p class="train-copy">
+          CUSCO → MACHU PICCHU<br>
+          BY TRAIN
+        </p>
 
-      <!-- ========================================
-           LITTLE THINGS 26–35
-      ======================================== -->
+        <p class="hand train-hand">
+          watching the mountains pass by
+        </p>
 
-      <section class="section">
+      </div>
 
-        <div class="section-title">
-          <h2>LITTLE THINGS</h2>
-          <span>things I wanted to remember</span>
-        </div>
+    </section>
 
-        <div class="cusco-grid">
 
-          <figure class="p26">
-            <img src="images/Cusco26.jpg" alt="A photograph from Cusco" />
-          </figure>
 
-          <figure class="p27">
-            <img src="images/Cusco27.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <!-- AGUAS CALIENTES -->
 
-          <figure class="p28">
-            <img src="images/Cusco28.jpg" alt="A photograph from Cusco" />
-          </figure>
+    <section>
 
-          <p class="hand little-note">
-            little pieces of the trip
-          </p>
+      <div class="section-head">
+        <h2>AGUAS CALIENTES</h2>
+        <p>14—16</p>
+      </div>
 
-          <figure class="p29">
-            <img src="images/Cusco29.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <div class="grid">
 
-          <figure class="p30">
-            <img src="images/Cusco30.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="aguas-title">
+          one night below the mountain
+        </p>
 
-          <figure class="p31">
-            <img src="images/Cusco31.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="aguas14">
+          <img
+            src="images/Cusco14.jpg"
+            alt="Dinner in Aguas Calientes"
+          >
+        </figure>
 
-          <figure class="p32">
-            <img src="images/Cusco32.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="aguas15">
+          <img
+            src="images/Cusco15.jpg"
+            alt="A personal photograph in Aguas Calientes"
+          >
+        </figure>
 
-          <figure class="p33">
-            <img src="images/Cusco33.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="aguas16">
+          <img
+            src="images/Cusco16.jpg"
+            alt="Food from dinner in Aguas Calientes"
+          >
+        </figure>
 
-          <figure class="p34">
-            <img src="images/Cusco34.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="aguas-info">
+          AGUAS CALIENTES<br>
+          AT THE FOOT OF MACHU PICCHU<br>
+          DINNER / 14 + 16
+        </p>
 
-          <figure class="p35">
-            <img src="images/Cusco35.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="hand aguas-hand">
+          dinner before the big day
+        </p>
 
-        </div>
+      </div>
 
-      </section>
+    </section>
 
 
-      <!-- ========================================
-           LAST DAYS 36–47
-      ======================================== -->
 
-      <section class="section">
+    <!-- MACHU PICCHU -->
 
-        <div class="section-title">
-          <h2>LAST DAYS</h2>
-          <span>before leaving</span>
-        </div>
+    <section>
 
-        <div class="cusco-grid">
+      <div class="section-head">
+        <h2>MACHU PICCHU</h2>
+        <p>17—23</p>
+      </div>
 
-          <figure class="p36">
-            <img src="images/Cusco36.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <h2 class="machu-name">
+        Machu<br>
+        Picchu
+      </h2>
 
-          <figure class="p37">
-            <img src="images/Cusco37.jpg" alt="A photograph from Cusco" />
-          </figure>
+      <div class="grid">
 
-          <figure class="p38">
-            <img src="images/Cusco38.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu17">
+          <img
+            src="images/Cusco17.jpg"
+            alt="Machu Picchu in Peru"
+          >
+        </figure>
 
-          <p class="hand last-note">
-            one last look
-          </p>
+        <figure class="machu18">
+          <img
+            src="images/Cusco18.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p39">
-            <img src="images/Cusco39.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu19">
+          <img
+            src="images/Cusco19.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p40">
-            <img src="images/Cusco40.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu20">
+          <img
+            src="images/Cusco20.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p41">
-            <img src="images/Cusco41.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="machu-hand-big">
+          made it !!
+        </p>
 
-          <figure class="p42">
-            <img src="images/Cusco42.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu21">
+          <img
+            src="images/Cusco21.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p43">
-            <img src="images/Cusco43.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu22">
+          <img
+            src="images/Cusco22.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p44">
-            <img src="images/Cusco44.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <figure class="machu23">
+          <img
+            src="images/Cusco23.jpg"
+            alt="A photograph at Machu Picchu"
+          >
+        </figure>
 
-          <figure class="p45">
-            <img src="images/Cusco45.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="machu-copy">
+          MACHU PICCHU / PERU<br>
+          17—23<br><br>
+          AFTER ALL THE ROADS,<br>
+          TRAINS AND MOUNTAINS.
+        </p>
 
-          <figure class="p46">
-            <img src="images/Cusco46.jpg" alt="A photograph from Cusco" />
-          </figure>
+        <p class="hand machu-note">
+          this was what I came all this way for
+        </p>
 
-          <figure class="p47">
-            <img src="images/Cusco47.jpg" alt="A photograph from Cusco" />
-          </figure>
+      </div>
 
-          <p class="hand ending">
-            Cusco ♡
-          </p>
+    </section>
 
-        </div>
 
-      </section>
 
-    </main>
+    <!-- CLOCK TOWER -->
 
+    <section>
 
-    <!-- FOOTER -->
+      <div class="section-head">
+        <h2>CUSCO / CLOCK TOWER</h2>
+        <p>26—29</p>
+      </div>
 
-    <footer>
+      <div class="grid">
 
-      <a href="paris.html">
-        ← PARIS
-      </a>
+        <p class="tower-title">
+          back in Cusco
+        </p>
 
-      <span>03 / CUSCO</span>
+        <figure class="tower26">
+          <img
+            src="images/Cusco26.jpg"
+            alt="A photograph at the clock tower in Cusco"
+          >
+        </figure>
 
-      <a href="index.html">
-        ANTWERP →
-      </a>
+        <figure class="tower27">
+          <img
+            src="images/Cusco27.jpg"
+            alt="A photograph at the clock tower in Cusco"
+          >
+        </figure>
 
-    </footer>
+        <figure class="tower28">
+          <img
+            src="images/Cusco28.jpg"
+            alt="A photograph at the clock tower in Cusco"
+          >
+        </figure>
 
-  </body>
+        <figure class="tower29">
+          <img
+            src="images/Cusco29.jpg"
+            alt="A photograph at the clock tower in Cusco"
+          >
+        </figure>
+
+        <p class="tower-info">
+          CUSCO / PERU<br>
+          CLOCK TOWER<br>
+          26—29
+        </p>
+
+        <p class="hand tower-hand">
+          another afternoon in Cusco
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FRAGMENTS -->
+
+    <section>
+
+      <div class="section-head">
+        <h2>FROM THE JOURNEY</h2>
+        <p>PERSONAL ARCHIVE</p>
+      </div>
+
+      <div class="grid">
+
+        <figure class="frag24">
+          <img
+            src="images/Cusco24.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="frag25">
+          <img
+            src="images/Cusco25.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <p class="fragment-title">
+          little fragments
+        </p>
+
+        <figure class="frag30">
+          <img src="images/Cusco30.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag31">
+          <img src="images/Cusco31.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag32">
+          <img src="images/Cusco32.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag33">
+          <img src="images/Cusco33.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag34">
+          <img src="images/Cusco34.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag35">
+          <img src="images/Cusco35.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag36">
+          <img src="images/Cusco36.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag37">
+          <img src="images/Cusco37.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag38">
+          <img src="images/Cusco38.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <figure class="frag39">
+          <img src="images/Cusco39.jpg" alt="A photograph from Cusco">
+        </figure>
+
+        <p class="hand fragment-hand">
+          tired, curious, still moving
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FINAL PART -->
+
+    <section>
+
+      <div class="grid">
+
+        <figure class="last40">
+          <img
+            src="images/Cusco40.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last41">
+          <img
+            src="images/Cusco41.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last42">
+          <img
+            src="images/Cusco42.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last43">
+          <img
+            src="images/Cusco43.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <p class="last-hand">
+          brave enough to go, happy that I did
+        </p>
+
+        <figure class="last44">
+          <img
+            src="images/Cusco44.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last45">
+          <img
+            src="images/Cusco45.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last46">
+          <img
+            src="images/Cusco46.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <figure class="last47">
+          <img
+            src="images/Cusco47.jpg"
+            alt="A photograph from my journey in Peru"
+          >
+        </figure>
+
+        <p class="ending">
+          worth the journey.
+        </p>
+
+        <p class="ending-small">
+          Peru, I'll remember this one.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer>
+
+    <a href="paris.html">
+      ← PARIS
+    </a>
+
+    <span>
+      TRAVEL JOURNAL / 03
+    </span>
+
+    <a href="index.html">
+      ANTWERP →
+    </a>
+
+  </footer>
+
+
+</body>
 </html>

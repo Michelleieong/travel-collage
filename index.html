@@ -1,1019 +1,1579 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Antwerp Travel Journal</title>
+  <title>Antwerp — Travel Journal</title>
 
-    <!-- TYPEWRITER FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- HANDWRITTEN FONT -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
 
-    <style>
-      * {
-        box-sizing: border-box;
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      background: #d8d7cc;
+      color: #171714;
+
+      font-family: "Special Elite", monospace;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+
+    /* =========================================
+       NAV
+    ========================================= */
+
+    nav {
+      width: 94%;
+      max-width: 1280px;
+
+      margin: auto;
+      padding: 20px 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      border-bottom: 1px solid #171714;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      font-style: italic;
+    }
+
+
+    /* =========================================
+       COVER
+    ========================================= */
+
+    .cover {
+      width: 94%;
+      max-width: 1280px;
+
+      min-height: 700px;
+
+      margin: auto;
+      padding: 55px 0 90px;
+
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+
+      position: relative;
+    }
+
+    .issue {
+      grid-column: 1 / 4;
+
+      margin: 0;
+
+      font-size: 9px;
+      line-height: 1.8;
+      letter-spacing: 1.5px;
+    }
+
+    .cover-title {
+      grid-column: 1 / 13;
+
+      margin: 45px 0 0;
+
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(100px, 16vw, 220px);
+      font-style: italic;
+      font-weight: normal;
+
+      line-height: 0.68;
+      letter-spacing: -9px;
+
+      z-index: 2;
+    }
+
+    .cover-photo {
+      grid-column: 7 / 12;
+
+      margin-top: -15px;
+
+      z-index: 1;
+    }
+
+    .cover-photo img {
+      filter: contrast(0.96);
+    }
+
+    .cover-copy {
+      grid-column: 2 / 6;
+
+      margin-top: -80px;
+
+      font-size: 9px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+    }
+
+    .cover-number {
+      grid-column: 11 / 13;
+
+      align-self: end;
+
+      margin: 0;
+
+      text-align: right;
+
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-size: 80px;
+      line-height: 0.8;
+    }
+
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    main {
+      width: 90%;
+      max-width: 1180px;
+
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 180px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+
+      align-items: start;
+    }
+
+    .section-label {
+      margin-bottom: 45px;
+      padding: 10px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      border-top: 1px solid #171714;
+
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+
+    .section-label h2 {
+      margin: 0;
+
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .section-label p {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: 7px;
+
+      font-size: 7px;
+      letter-spacing: 1px;
+    }
+
+    .serif-note {
+      margin: 0;
+
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-weight: normal;
+
+      line-height: 0.9;
+    }
+
+
+    /* =========================================
+       OPENING COLLAGE
+       2–7
+    ========================================= */
+
+    .opening {
+      margin-top: 80px;
+    }
+
+    .open2 {
+      grid-column: 1 / 5;
+    }
+
+    .open3 {
+      grid-column: 6 / 9;
+
+      margin-top: 130px;
+    }
+
+    .open4 {
+      grid-column: 10 / 13;
+
+      margin-top: 30px;
+    }
+
+    .open-word {
+      grid-column: 4 / 11;
+
+      margin-top: -15px;
+
+      font-size: 105px;
+
+      transform: rotate(-7deg);
+
+      position: relative;
+      z-index: 3;
+    }
+
+    .open5 {
+      grid-column: 2 / 6;
+
+      margin-top: 60px;
+    }
+
+    .open6 {
+      grid-column: 7 / 10;
+
+      margin-top: 160px;
+    }
+
+    .open7 {
+      grid-column: 10 / 13;
+
+      margin-top: 70px;
+    }
+
+    .open-text {
+      grid-column: 2 / 5;
+
+      margin-top: 25px;
+
+      font-size: 8px;
+      line-height: 1.9;
+    }
+
+
+    /* =========================================
+       PHOTO SERIES
+       8–12
+       ORDERED EDITORIAL
+    ========================================= */
+
+    .series-section {
+      width: 94%;
+      max-width: 1280px;
+
+      margin: 0 auto 190px;
+
+      padding: 35px 0 55px;
+
+      border-top: 1px solid #171714;
+      border-bottom: 1px solid #171714;
+    }
+
+    .series-top {
+      margin-bottom: 30px;
+
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .series-top h2 {
+      grid-column: 1 / 5;
+
+      margin: 0;
+
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .series-title {
+      grid-column: 5 / 11;
+
+      margin: 0;
+
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-weight: normal;
+
+      font-size: 62px;
+      line-height: 0.8;
+
+      text-align: center;
+    }
+
+    .series-number {
+      grid-column: 11 / 13;
+
+      margin: 0;
+
+      text-align: right;
+
+      font-size: 9px;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .series8 {
+      grid-column: 1 / 3;
+    }
+
+    .series9 {
+      grid-column: 3 / 5;
+    }
+
+    .series10 {
+      grid-column: 5 / 7;
+    }
+
+    .series11 {
+      grid-column: 2 / 4;
+      margin-top: 16px;
+    }
+
+    .series12 {
+      grid-column: 4 / 6;
+      margin-top: 16px;
+    }
+
+
+    /* =========================================
+       WHAT I WORE
+       ONLY 5 / 31 / 58
+    ========================================= */
+
+    .wear {
+      position: relative;
+    }
+
+    .wear-word {
+      grid-column: 1 / 13;
+
+      margin: 20px 0 -70px;
+
+      font-size: clamp(80px, 12vw, 145px);
+
+      text-align: center;
+
+      position: relative;
+      z-index: 0;
+    }
+
+    .wear5 {
+      grid-column: 1 / 5;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .wear31 {
+      grid-column: 5 / 9;
+
+      margin-top: 100px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .wear58 {
+      grid-column: 9 / 13;
+
+      margin-top: 20px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .wear-copy {
+      grid-column: 6 / 9;
+
+      margin-top: 20px;
+
+      font-size: 8px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================================
+       KMSKA
+       ONLY 15 / 16
+    ========================================= */
+
+    .museum {
+      position: relative;
+    }
+
+    .museum15 {
+      grid-column: 1 / 7;
+    }
+
+    .museum-title {
+      grid-column: 6 / 13;
+
+      margin-top: -60px;
+
+      font-size: clamp(80px, 11vw, 135px);
+
+      position: relative;
+      z-index: 3;
+    }
+
+    .museum-copy {
+      grid-column: 8 / 12;
+
+      margin-top: 30px;
+
+      font-size: 8px;
+      line-height: 1.9;
+    }
+
+    .museum16 {
+      grid-column: 4 / 10;
+
+      margin-top: 80px;
+    }
+
+
+    /* =========================================
+       ANTWERP NOTES
+       UNKNOWN / GENERAL PHOTOS
+    ========================================= */
+
+    .note13 {
+      grid-column: 1 / 4;
+    }
+
+    .note14 {
+      grid-column: 5 / 8;
+
+      margin-top: 100px;
+    }
+
+    .note17 {
+      grid-column: 9 / 13;
+
+      margin-top: 20px;
+    }
+
+    .note18 {
+      grid-column: 2 / 6;
+
+      margin-top: 110px;
+    }
+
+    .note19 {
+      grid-column: 7 / 10;
+
+      margin-top: 25px;
+    }
+
+    .note20 {
+      grid-column: 10 / 13;
+
+      margin-top: 130px;
+    }
+
+    .note-word {
+      grid-column: 3 / 11;
+
+      margin: 20px 0 -20px;
+
+      font-size: 100px;
+
+      transform: rotate(-5deg);
+
+      text-align: center;
+    }
+
+    .note21 {
+      grid-column: 1 / 4;
+
+      margin-top: 70px;
+    }
+
+    .note22 {
+      grid-column: 5 / 9;
+
+      margin-top: 10px;
+    }
+
+    .note23 {
+      grid-column: 10 / 13;
+
+      margin-top: 100px;
+    }
+
+    .note24 {
+      grid-column: 2 / 5;
+
+      margin-top: 110px;
+    }
+
+    .note25 {
+      grid-column: 6 / 9;
+
+      margin-top: 20px;
+    }
+
+    .note26 {
+      grid-column: 9 / 13;
+
+      margin-top: 125px;
+    }
+
+    .note27 {
+      grid-column: 1 / 5;
+
+      margin-top: 80px;
+    }
+
+    .note28 {
+      grid-column: 6 / 9;
+
+      margin-top: 30px;
+    }
+
+    .note29 {
+      grid-column: 10 / 13;
+
+      margin-top: 100px;
+    }
+
+    .note30 {
+      grid-column: 2 / 6;
+
+      margin-top: 90px;
+    }
+
+    .note32 {
+      grid-column: 7 / 10;
+
+      margin-top: 20px;
+    }
+
+    .note34 {
+      grid-column: 10 / 13;
+
+      margin-top: 120px;
+    }
+
+    .note35 {
+      grid-column: 3 / 7;
+
+      margin-top: 90px;
+    }
+
+    /* 51 naturally mixed in */
+
+    .note51 {
+      grid-column: 8 / 12;
+
+      margin-top: 30px;
+    }
+
+
+    /* =========================================
+       VIDEO
+    ========================================= */
+
+    .video-section {
+      width: 76%;
+      max-width: 850px;
+
+      margin: 0 auto 190px;
+
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 20px;
+    }
+
+    .video-number {
+      grid-column: 1 / 2;
+
+      margin: 0;
+
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-size: 65px;
+    }
+
+    .video-wrap {
+      grid-column: 2 / 8;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+
+      object-fit: contain;
+    }
+
+    .video-caption {
+      grid-column: 4 / 9;
+
+      margin: 0;
+
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+
+      font-size: 34px;
+
+      text-align: right;
+    }
+
+
+    /* =========================================
+       WHAT I ATE
+       ONLY 33 / 45 / 53–57
+    ========================================= */
+
+    .food-word {
+      grid-column: 1 / 13;
+
+      margin: 0 0 -45px;
+
+      font-size: clamp(90px, 14vw, 165px);
+
+      text-align: right;
+
+      position: relative;
+      z-index: 0;
+    }
+
+    .food33 {
+      grid-column: 1 / 5;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .food45 {
+      grid-column: 6 / 10;
+
+      margin-top: 100px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .food53 {
+      grid-column: 10 / 13;
+
+      margin-top: 25px;
+    }
+
+    .food54 {
+      grid-column: 2 / 5;
+
+      margin-top: 110px;
+    }
+
+    .food55 {
+      grid-column: 5 / 8;
+
+      margin-top: 25px;
+    }
+
+    .food56 {
+      grid-column: 9 / 13;
+
+      margin-top: 120px;
+    }
+
+    .food57 {
+      grid-column: 3 / 8;
+
+      margin-top: 90px;
+    }
+
+    .food-copy {
+      grid-column: 9 / 12;
+
+      margin-top: 130px;
+
+      font-size: 8px;
+      line-height: 1.9;
+    }
+
+
+    /* =========================================
+       CAMERA ROLL
+       36–44 + 52
+    ========================================= */
+
+    .cam36 {
+      grid-column: 1 / 4;
+    }
+
+    .cam37 {
+      grid-column: 5 / 9;
+
+      margin-top: 85px;
+    }
+
+    .cam38 {
+      grid-column: 10 / 13;
+
+      margin-top: 20px;
+    }
+
+    .cam39 {
+      grid-column: 2 / 6;
+
+      margin-top: 110px;
+    }
+
+    .cam40 {
+      grid-column: 7 / 10;
+
+      margin-top: 25px;
+    }
+
+    .cam41 {
+      grid-column: 10 / 13;
+
+      margin-top: 120px;
+    }
+
+    .cam-word {
+      grid-column: 2 / 12;
+
+      margin: 20px 0 -20px;
+
+      font-size: 105px;
+
+      transform: rotate(4deg);
+
+      text-align: center;
+    }
+
+    .cam42 {
+      grid-column: 1 / 5;
+
+      margin-top: 80px;
+    }
+
+    .cam43 {
+      grid-column: 6 / 9;
+
+      margin-top: 25px;
+    }
+
+    .cam44 {
+      grid-column: 10 / 13;
+
+      margin-top: 110px;
+    }
+
+    .cam52 {
+      grid-column: 4 / 9;
+
+      margin-top: 100px;
+    }
+
+
+    /* =========================================
+       PLACES I'VE BEEN
+       46–50 / 59 / 60–63
+    ========================================= */
+
+    .places-title {
+      grid-column: 1 / 13;
+
+      margin: 0 0 -35px;
+
+      font-size: clamp(80px, 12vw, 145px);
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .place46 {
+      grid-column: 1 / 5;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .place47 {
+      grid-column: 6 / 9;
+
+      margin-top: 110px;
+    }
+
+    .place48 {
+      grid-column: 10 / 13;
+
+      margin-top: 30px;
+    }
+
+    .place49 {
+      grid-column: 2 / 6;
+
+      margin-top: 100px;
+    }
+
+    .place50 {
+      grid-column: 7 / 11;
+
+      margin-top: 30px;
+    }
+
+    /* personal photo naturally inserted */
+
+    .place59 {
+      grid-column: 10 / 13;
+
+      margin-top: 150px;
+    }
+
+    .place60 {
+      grid-column: 1 / 5;
+
+      margin-top: 120px;
+    }
+
+    .place61 {
+      grid-column: 6 / 9;
+
+      margin-top: 30px;
+    }
+
+    .place62 {
+      grid-column: 9 / 13;
+
+      margin-top: 130px;
+    }
+
+    .place63 {
+      grid-column: 3 / 8;
+
+      margin-top: 90px;
+    }
+
+    .ending {
+      grid-column: 8 / 13;
+
+      margin-top: 100px;
+
+      font-size: 70px;
+
+      text-align: right;
+
+      transform: rotate(-4deg);
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      width: 90%;
+      max-width: 1180px;
+
+      margin: auto;
+      padding: 25px 0 50px;
+
+      border-top: 1px solid #171714;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      .cover {
+        min-height: auto;
       }
 
-      body {
-        margin: 0;
-        background-color: #f2ede1;
-        color: #29261f;
-        font-family: "Special Elite", monospace;
-      }
-
-      /* ---------------- NAV ---------------- */
-
-      nav {
-        width: 92%;
-        max-width: 1200px;
-        margin: auto;
-
-        padding: 22px 0;
-
-        display: flex;
-        justify-content: space-between;
-
-        border-bottom: 1px solid #aaa294;
-
-        font-size: 11px;
-        letter-spacing: 1.5px;
-      }
-
-      nav a {
-        color: #29261f;
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        text-decoration: underline;
-      }
-
-      /* ---------------- HEADER ---------------- */
-
-      header {
-        width: 92%;
-        max-width: 1200px;
-
-        margin: 55px auto 80px;
-      }
-
-      .chapter {
-        font-size: 11px;
-        letter-spacing: 2px;
-      }
-
-      h1 {
-        font-size: clamp(70px, 10vw, 145px);
-
-        font-weight: normal;
-
-        line-height: 0.85;
-
-        margin: 18px 0 15px;
-
-        letter-spacing: -5px;
-      }
-
-      .header-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-      }
-
-      .location {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-      }
-
-      .intro-hand {
-        width: 350px;
-
-        margin: 0;
-
-        font-family: "Caveat", cursive;
-        font-size: 27px;
-
-        transform: rotate(-2deg);
-      }
-
-      /* ---------------- GENERAL JOURNAL ---------------- */
-
-      .journal {
-        width: 88%;
-        max-width: 1100px;
-
-        margin: auto;
-      }
-
-      .section {
-        margin-bottom: 150px;
-      }
-
-      .section-title {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-
-        margin-bottom: 40px;
-      }
-
-      .section-title h2 {
-        margin: 0;
-
-        font-size: 17px;
-        font-weight: normal;
-
-        letter-spacing: 2px;
-      }
-
-      .section-title span {
-        font-family: "Caveat", cursive;
-        font-size: 23px;
-
-        transform: rotate(-3deg);
+      .cover > *,
+      .grid > *,
+      .video-section > * {
+        grid-column: 1 / -1;
       }
 
       .grid {
-        display: grid;
-
-        grid-template-columns: repeat(12, 1fr);
-
-        gap: 20px;
-
-        align-items: start;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      figure {
-        margin: 0;
-      }
-
-      img {
-        display: block;
-
-        width: 100%;
-        height: auto;
-      }
-
-      figcaption {
-        margin-top: 6px;
-
-        font-size: 9px;
-        line-height: 1.4;
-
-        letter-spacing: 0.5px;
-      }
-
-      .hand {
-        font-family: "Caveat", cursive;
-
-        font-size: 25px;
-        line-height: 1.1;
-      }
-
-      .type {
-        font-size: 10px;
-        line-height: 1.7;
-
-        letter-spacing: 0.5px;
-      }
-
-      /* ==================================================
-         OPENING
-      ================================================== */
-
-      .opening {
-        margin-bottom: 150px;
-      }
-
-      .o1 {
-        grid-column: 1 / 6;
-      }
-
-      .o2 {
-        grid-column: 7 / 10;
-        margin-top: 60px;
-      }
-
-      .o3 {
-        grid-column: 10 / 13;
+      .grid > figure {
+        grid-column: auto;
         margin-top: 15px;
       }
 
-      .opening-note {
-        grid-column: 6 / 10;
-
-        margin-top: 15px;
-
-        transform: rotate(-3deg);
+      .series-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .o4 {
-        grid-column: 2 / 5;
-        margin-top: 40px;
+      .series-grid > * {
+        grid-column: auto;
+        margin-top: 0;
       }
 
-      .o5 {
-        grid-column: 6 / 9;
-        margin-top: 90px;
+      .cover-title {
+        font-size: 80px;
+        letter-spacing: -4px;
       }
 
-      .o6 {
-        grid-column: 10 / 13;
-        margin-top: 35px;
-      }
-
-      .opening-type {
-        grid-column: 2 / 5;
-
-        margin-top: 25px;
-      }
-
-      /* ==================================================
-         WHAT I WORE
-      ================================================== */
-
-      .wear1 {
-        grid-column: 2 / 5;
-      }
-
-      .wear2 {
-        grid-column: 5 / 8;
-        margin-top: 75px;
-      }
-
-      .wear3 {
-        grid-column: 9 / 12;
+      .cover-photo {
         margin-top: 20px;
       }
 
-      .wear-note {
-        grid-column: 8 / 12;
-
-        margin-top: 25px;
-
-        transform: rotate(3deg);
-      }
-
-      .wear4 {
-        grid-column: 1 / 4;
-        margin-top: 40px;
-      }
-
-      .wear5 {
-        grid-column: 4 / 7;
-        margin-top: 100px;
-      }
-
-      .wear6 {
-        grid-column: 8 / 11;
-        margin-top: 50px;
-      }
-
-      .wear7 {
-        grid-column: 11 / 13;
-        margin-top: 130px;
-      }
-
-      .wear8 {
-        grid-column: 3 / 6;
-        margin-top: 40px;
-      }
-
-      .wear9 {
-        grid-column: 7 / 10;
-        margin-top: 100px;
-      }
-
-      /* ==================================================
-         WHAT I ATE
-      ================================================== */
-
-      .eat1 {
-        grid-column: 1 / 4;
+      .cover-copy {
         margin-top: 20px;
       }
 
-      .eat2 {
-        grid-column: 4 / 7;
-        margin-top: 70px;
+      .serif-note,
+      .open-word,
+      .note-word,
+      .cam-word,
+      .wear-word,
+      .food-word,
+      .places-title,
+      .museum-title {
+        font-size: 60px;
       }
-
-      .eat3 {
-        grid-column: 8 / 11;
-      }
-
-      .eat4 {
-        grid-column: 11 / 13;
-        margin-top: 100px;
-      }
-
-      .eat-note {
-        grid-column: 2 / 6;
-
-        margin-top: 20px;
-
-        transform: rotate(-2deg);
-      }
-
-      .eat5 {
-        grid-column: 6 / 9;
-        margin-top: 60px;
-      }
-
-      .eat6 {
-        grid-column: 9 / 12;
-        margin-top: 120px;
-      }
-
-      .eat7 {
-        grid-column: 2 / 5;
-        margin-top: 80px;
-      }
-
-      .eat8 {
-        grid-column: 5 / 8;
-        margin-top: 20px;
-      }
-
-      .eat9 {
-        grid-column: 9 / 12;
-        margin-top: 90px;
-      }
-
-      /* ==================================================
-         WHERE I WENT
-      ================================================== */
-
-      .go1 {
-        grid-column: 1 / 5;
-      }
-
-      .go2 {
-        grid-column: 6 / 9;
-        margin-top: 80px;
-      }
-
-      .go3 {
-        grid-column: 10 / 13;
-        margin-top: 30px;
-      }
-
-      .go-note {
-        grid-column: 7 / 11;
-
-        margin-top: 10px;
-
-        transform: rotate(2deg);
-      }
-
-      .go4 {
-        grid-column: 2 / 5;
-        margin-top: 80px;
-      }
-
-      .go5 {
-        grid-column: 5 / 8;
-        margin-top: 20px;
-      }
-
-      .go6 {
-        grid-column: 9 / 12;
-        margin-top: 100px;
-      }
-
-      .go7 {
-        grid-column: 1 / 4;
-        margin-top: 50px;
-      }
-
-      .go8 {
-        grid-column: 5 / 9;
-        margin-top: 100px;
-      }
-
-      .go9 {
-        grid-column: 10 / 13;
-        margin-top: 40px;
-      }
-
-      /* ==================================================
-         VIDEO
-      ================================================== */
 
       .video-section {
-        width: 65%;
-
-        margin: 30px auto 150px;
+        width: 90%;
+        grid-template-columns: 1fr;
       }
 
-      video {
-        display: block;
+    }
 
-        width: 100%;
-        max-height: 500px;
+  </style>
+</head>
 
-        object-fit: contain;
-      }
 
-      .video-text {
-        text-align: right;
+<body>
 
-        margin-top: 8px;
 
-        font-family: "Caveat", cursive;
-        font-size: 24px;
+  <!-- NAV -->
 
-        transform: rotate(-2deg);
-      }
+  <nav>
+    <a href="index.html">ANTWERP</a>
+    <a href="paris.html">PARIS</a>
+    <a href="cusco.html">CUSCO</a>
+  </nav>
 
-      /* ==================================================
-         LITTLE THINGS
-      ================================================== */
 
-      .little1 {
-        grid-column: 1 / 3;
-        margin-top: 60px;
-      }
 
-      .little2 {
-        grid-column: 3 / 6;
-      }
+  <!-- COVER -->
 
-      .little3 {
-        grid-column: 7 / 9;
-        margin-top: 100px;
-      }
+  <header class="cover">
 
-      .little4 {
-        grid-column: 10 / 13;
-        margin-top: 30px;
-      }
+    <p class="issue">
+      TRAVEL JOURNAL<br>
+      VOL. 01 / ANTWERP<br>
+      BELGIUM
+    </p>
 
-      .little-note {
-        grid-column: 5 / 9;
+    <h1 class="cover-title">
+      Antwerp
+    </h1>
 
-        margin-top: 20px;
+    <figure class="cover-photo">
+      <img
+        src="images/Antwerp1.jpg"
+        alt="A photograph from my trip to Antwerp"
+      >
+    </figure>
 
-        transform: rotate(-3deg);
-      }
+    <p class="cover-copy">
+      A visual record of a few days in Antwerp.<br>
+      Clothes, food, museums, streets and things<br>
+      I wanted to remember.
+    </p>
 
-      .little5 {
-        grid-column: 1 / 4;
-        margin-top: 80px;
-      }
+    <p class="cover-number">
+      01
+    </p>
 
-      .little6 {
-        grid-column: 5 / 7;
-        margin-top: 130px;
-      }
+  </header>
 
-      .little7 {
-        grid-column: 8 / 11;
-        margin-top: 50px;
-      }
 
-      .little8 {
-        grid-column: 11 / 13;
-        margin-top: 120px;
-      }
 
-      .little9 {
-        grid-column: 2 / 5;
-        margin-top: 60px;
-      }
+  <main>
 
-      /* ==================================================
-         PLACES I SAVED / ENDING
-      ================================================== */
 
-      .saved1 {
-        grid-column: 1 / 4;
-      }
+    <!-- OPENING -->
 
-      .saved2 {
-        grid-column: 5 / 8;
-        margin-top: 80px;
-      }
+    <section class="opening">
 
-      .saved3 {
-        grid-column: 9 / 12;
-        margin-top: 20px;
-      }
-
-      .saved-list {
-        grid-column: 2 / 6;
-
-        margin-top: 60px;
-      }
-
-      .saved-list p {
-        margin: 0 0 14px;
-      }
-
-      .saved4 {
-        grid-column: 7 / 10;
-        margin-top: 80px;
-      }
-
-      .saved5 {
-        grid-column: 10 / 13;
-        margin-top: 140px;
-      }
-
-      .saved6 {
-        grid-column: 2 / 5;
-        margin-top: 80px;
-      }
-
-      .saved7 {
-        grid-column: 6 / 9;
-        margin-top: 20px;
-      }
-
-      .saved8 {
-        grid-column: 9 / 12;
-        margin-top: 100px;
-      }
-
-      .ending-note {
-        grid-column: 7 / 12;
-
-        text-align: right;
-
-        margin-top: 40px;
-
-        font-size: 31px;
-
-        transform: rotate(-2deg);
-      }
-
-      /* ---------------- FOOTER ---------------- */
-
-      footer {
-        width: 88%;
-        max-width: 1100px;
-
-        margin: 30px auto 0;
-
-        padding: 25px 0 45px;
-
-        border-top: 1px solid #aaa294;
-
-        display: flex;
-        justify-content: space-between;
-
-        font-size: 10px;
-        letter-spacing: 1px;
-      }
-
-      footer a {
-        color: #29261f;
-      }
-
-      /* ---------------- MOBILE ---------------- */
-
-      @media (max-width: 700px) {
-        .grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .grid > * {
-          grid-column: auto;
-          margin-top: 15px;
-        }
-
-        h1 {
-          letter-spacing: -2px;
-        }
-
-        .intro-hand {
-          width: 220px;
-        }
-
-        .video-section {
-          width: 88%;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- NAVIGATION -->
-
-    <nav>
-      <a href="index.html">ANTWERP</a>
-      <a href="paris.html">PARIS</a>
-      <a href="cusco.html">CUSCO</a>
-    </nav>
-
-    <!-- HEADER -->
-
-    <header>
-      <p class="chapter">TRAVEL JOURNAL / 01</p>
-
-      <h1>ANTWERP</h1>
-
-      <div class="header-bottom">
-        <p class="location">BELGIUM</p>
-
-        <p class="intro-hand">
-          a few days in Antwerp ♡
-        </p>
+      <div class="section-label">
+        <h2>NOTES FROM ANTWERP</h2>
+        <p>02—07</p>
       </div>
-    </header>
 
-    <main class="journal">
+      <div class="grid">
 
-      <!-- ========================================
-           OPENING — PHOTOS 1–6
-      ========================================= -->
+        <figure class="open2">
+          <img src="images/Antwerp2.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-      <section class="section opening">
-        <div class="grid">
+        <figure class="open3">
+          <img src="images/Antwerp3.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="o1">
-            <img
-              src="images/Antwerp1.jpg"
-              alt="A photograph from my trip to Antwerp"
-            />
-            <figcaption>ANTWERP, BELGIUM</figcaption>
-          </figure>
+        <figure class="open4">
+          <img src="images/Antwerp4.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="o2">
-            <img
-              src="images/Antwerp2.jpg"
-              alt="A personal travel photograph from Antwerp"
-            />
-          </figure>
+        <p class="serif-note open-word">
+          somewhere
+        </p>
 
-          <figure class="o3">
-            <img
-              src="images/Antwerp3.jpg"
-              alt="A personal travel photograph from Antwerp"
-            />
-          </figure>
+        <figure class="open5">
+          <img src="images/Antwerp5.jpg" alt="My outfit in Antwerp">
+        </figure>
 
-          <p class="hand opening-note">
-            Antwerp →
-          </p>
+        <figure class="open6">
+          <img src="images/Antwerp6.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="o4">
-            <img
-              src="images/Antwerp4.jpg"
-              alt="A personal travel photograph from Antwerp"
-            />
-          </figure>
+        <figure class="open7">
+          <img src="images/Antwerp7.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="o5">
-            <img
-              src="images/Antwerp5.jpg"
-              alt="A personal travel photograph from Antwerp"
-            />
-          </figure>
+        <p class="open-text">
+          ANTWERP / BELGIUM<br>
+          PERSONAL ARCHIVE<br>
+          TRAVEL JOURNAL 01
+        </p>
 
-          <figure class="o6">
-            <img
-              src="images/Antwerp6.jpg"
-              alt="A personal travel photograph from Antwerp"
-            />
-          </figure>
+      </div>
 
-          <p class="type opening-type">
-            BELGIUM / TRAVEL JOURNAL / 01
-          </p>
+    </section>
 
-        </div>
-      </section>
+  </main>
 
 
-      <!-- ========================================
-           WHAT I WORE — PHOTOS 7–15
-      ========================================= -->
 
-      <section class="section">
+  <!-- PHOTO SERIES -->
 
-        <div class="section-title">
-          <h2>WHAT I WORE</h2>
-          <span>outfits from the trip</span>
-        </div>
+  <section class="series-section">
 
-        <div class="grid">
+    <div class="series-top">
 
-          <figure class="wear1">
-            <img src="images/Antwerp7.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <h2>
+        PHOTO SERIES<br>
+        ANTWERP
+      </h2>
 
-          <figure class="wear2">
-            <img src="images/Antwerp8.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <p class="series-title">
+        through my camera
+      </p>
 
-          <figure class="wear3">
-            <img src="images/Antwerp9.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <p class="series-number">
+        08—12
+      </p>
 
-          <p class="hand wear-note">
-            what I wore
-          </p>
-
-          <figure class="wear4">
-            <img src="images/Antwerp10.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="wear5">
-            <img src="images/Antwerp11.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="wear6">
-            <img src="images/Antwerp12.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="wear7">
-            <img src="images/Antwerp13.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="wear8">
-            <img src="images/Antwerp14.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="wear9">
-            <img src="images/Antwerp15.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-        </div>
-      </section>
+    </div>
 
 
-      <!-- ========================================
-           WHAT I ATE — PHOTOS 16–24
-      ========================================= -->
+    <div class="series-grid">
 
-      <section class="section">
+      <figure class="series8">
+        <img src="images/Antwerp8.jpg" alt="Antwerp photography series image">
+      </figure>
 
-        <div class="section-title">
-          <h2>WHAT I ATE</h2>
-          <span>things worth remembering</span>
-        </div>
+      <figure class="series9">
+        <img src="images/Antwerp9.jpg" alt="Antwerp photography series image">
+      </figure>
 
-        <div class="grid">
+      <figure class="series10">
+        <img src="images/Antwerp10.jpg" alt="Antwerp photography series image">
+      </figure>
 
-          <figure class="eat1">
-            <img src="images/Antwerp16.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <figure class="series11">
+        <img src="images/Antwerp11.jpg" alt="Antwerp photography series image">
+      </figure>
 
-          <figure class="eat2">
-            <img src="images/Antwerp17.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <figure class="series12">
+        <img src="images/Antwerp12.jpg" alt="Antwerp photography series image">
+      </figure>
 
-          <figure class="eat3">
-            <img src="images/Antwerp18.jpg" alt="A photograph from Antwerp" />
-          </figure>
+    </div>
 
-          <figure class="eat4">
-            <img src="images/Antwerp19.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <p class="hand eat-note">
-            what I ate →
-          </p>
-
-          <figure class="eat5">
-            <img src="images/Antwerp20.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="eat6">
-            <img src="images/Antwerp21.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="eat7">
-            <img src="images/Antwerp22.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="eat8">
-            <img src="images/Antwerp23.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="eat9">
-            <img src="images/Antwerp24.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-        </div>
-      </section>
+  </section>
 
 
-      <!-- ========================================
-           WHERE I WENT — PHOTOS 25–33
-      ========================================= -->
 
-      <section class="section">
+  <main>
 
-        <div class="section-title">
-          <h2>WHERE I WENT</h2>
-          <span>walking around</span>
+
+    <!-- WHAT I WORE -->
+
+    <section class="wear">
+
+      <div class="section-label">
+        <h2>WHAT I WORE</h2>
+        <p>05 / 31 / 58</p>
+      </div>
+
+      <div class="grid">
+
+        <p class="serif-note wear-word">
+          worn in Antwerp
+        </p>
+
+        <figure class="wear5">
+          <img src="images/Antwerp5.jpg" alt="My outfit in Antwerp">
+        </figure>
+
+        <figure class="wear31">
+          <img src="images/Antwerp31.jpg" alt="My outfit in Antwerp">
+        </figure>
+
+        <figure class="wear58">
+          <img src="images/Antwerp58.jpg" alt="My outfit in Antwerp">
+        </figure>
+
+        <p class="wear-copy">
+          WHAT I WORE<br>
+          ANTWERP / BELGIUM
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- KMSKA -->
+
+    <section class="museum">
+
+      <div class="section-label">
+        <h2>ROYAL MUSEUM OF FINE ARTS ANTWERP</h2>
+        <p>15 / 16</p>
+      </div>
+
+      <div class="grid">
+
+        <figure class="museum15">
+          <img
+            src="images/Antwerp15.jpg"
+            alt="Inside the Royal Museum of Fine Arts Antwerp"
+          >
+        </figure>
+
+        <h2 class="serif-note museum-title">
+          KMSKA
+        </h2>
+
+        <div class="museum-copy">
+          KMSKA<br>
+          KONINKLIJK MUSEUM VOOR SCHONE KUNSTEN ANTWERPEN<br><br>
+          AN AFTERNOON AT THE MUSEUM
         </div>
 
-        <div class="grid">
+        <figure class="museum16">
+          <img
+            src="images/Antwerp16.jpg"
+            alt="Inside the Royal Museum of Fine Arts Antwerp"
+          >
+        </figure>
 
-          <figure class="go1">
-            <img src="images/Antwerp25.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      </div>
 
-          <figure class="go2">
-            <img src="images/Antwerp26.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go3">
-            <img src="images/Antwerp27.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <p class="hand go-note">
-            somewhere in Antwerp →
-          </p>
-
-          <figure class="go4">
-            <img src="images/Antwerp28.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go5">
-            <img src="images/Antwerp29.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go6">
-            <img src="images/Antwerp30.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go7">
-            <img src="images/Antwerp31.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go8">
-            <img src="images/Antwerp32.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="go9">
-            <img src="images/Antwerp33.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-        </div>
-      </section>
+    </section>
 
 
-      <!-- VIDEO -->
 
-      <section class="video-section">
+    <!-- ANTWERP NOTES -->
+
+    <section>
+
+      <div class="section-label">
+        <h2>ANTWERP / OBSERVATIONS</h2>
+        <p>PERSONAL ARCHIVE</p>
+      </div>
+
+      <div class="grid">
+
+        <figure class="note13">
+          <img src="images/Antwerp13.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note14">
+          <img src="images/Antwerp14.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note17">
+          <img src="images/Antwerp17.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note18">
+          <img src="images/Antwerp18.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note19">
+          <img src="images/Antwerp19.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note20">
+          <img src="images/Antwerp20.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <p class="serif-note note-word">
+          fragments
+        </p>
+
+        <figure class="note21">
+          <img src="images/Antwerp21.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note22">
+          <img src="images/Antwerp22.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note23">
+          <img src="images/Antwerp23.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note24">
+          <img src="images/Antwerp24.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note25">
+          <img src="images/Antwerp25.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note26">
+          <img src="images/Antwerp26.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note27">
+          <img src="images/Antwerp27.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note28">
+          <img src="images/Antwerp28.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note29">
+          <img src="images/Antwerp29.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note30">
+          <img src="images/Antwerp30.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note32">
+          <img src="images/Antwerp32.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note34">
+          <img src="images/Antwerp34.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <figure class="note35">
+          <img src="images/Antwerp35.jpg" alt="A photograph from Antwerp">
+        </figure>
+
+        <!-- 51 naturally mixed into journal -->
+
+        <figure class="note51">
+          <img src="images/Antwerp51.jpg" alt="A personal photograph from Antwerp">
+        </figure>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- VIDEO -->
+
+    <section class="video-section">
+
+      <p class="video-number">
+        01
+      </p>
+
+      <div class="video-wrap">
 
         <video controls muted playsinline>
-          <source
-            src="images/Antwerp1.mp4"
-            type="video/mp4"
-          />
+          <source src="images/Antwerp1.mp4" type="video/mp4">
         </video>
 
-        <p class="video-text">
-          a little moment in motion
+      </div>
+
+      <p class="video-caption">
+        met a cute hat that matched my fit
+      </p>
+
+    </section>
+
+
+
+    <!-- WHAT I ATE -->
+
+    <section>
+
+      <div class="section-label">
+        <h2>WHAT I ATE</h2>
+        <p>33 / 45 / 53—57</p>
+      </div>
+
+      <div class="grid">
+
+        <p class="serif-note food-word">
+          what I ate
         </p>
 
-      </section>
+        <figure class="food33">
+          <img src="images/Antwerp33.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food45">
+          <img src="images/Antwerp45.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food53">
+          <img src="images/Antwerp53.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food54">
+          <img src="images/Antwerp54.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food55">
+          <img src="images/Antwerp55.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food56">
+          <img src="images/Antwerp56.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <figure class="food57">
+          <img src="images/Antwerp57.jpg" alt="Food I ate in Antwerp">
+        </figure>
+
+        <p class="food-copy">
+          ANTWERP<br>
+          FOOD NOTES<br>
+          PERSONAL ARCHIVE
+        </p>
+
+      </div>
+
+    </section>
 
 
-      <!-- ========================================
-           LITTLE THINGS — PHOTOS 34–42
-      ========================================= -->
 
-      <section class="section">
+    <!-- CAMERA ROLL -->
 
-        <div class="section-title">
-          <h2>LITTLE THINGS</h2>
-          <span>things I noticed</span>
-        </div>
+    <section>
 
-        <div class="grid">
+      <div class="section-label">
+        <h2>FROM THE CAMERA ROLL</h2>
+        <p>36—44</p>
+      </div>
 
-          <figure class="little1">
-            <img src="images/Antwerp34.jpg" alt="A photograph from Antwerp" />
-          </figure>
+      <div class="grid">
 
-          <figure class="little2">
-            <img src="images/Antwerp35.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam36">
+          <img src="images/Antwerp36.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little3">
-            <img src="images/Antwerp36.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam37">
+          <img src="images/Antwerp37.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little4">
-            <img src="images/Antwerp37.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam38">
+          <img src="images/Antwerp38.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <p class="hand little-note">
-            little things I wanted to keep
-          </p>
+        <figure class="cam39">
+          <img src="images/Antwerp39.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little5">
-            <img src="images/Antwerp38.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam40">
+          <img src="images/Antwerp40.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little6">
-            <img src="images/Antwerp39.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam41">
+          <img src="images/Antwerp41.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little7">
-            <img src="images/Antwerp40.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <p class="serif-note cam-word">
+          collected
+        </p>
 
-          <figure class="little8">
-            <img src="images/Antwerp41.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam42">
+          <img src="images/Antwerp42.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-          <figure class="little9">
-            <img src="images/Antwerp42.jpg" alt="A photograph from Antwerp" />
-          </figure>
+        <figure class="cam43">
+          <img src="images/Antwerp43.jpg" alt="A photograph from Antwerp">
+        </figure>
 
-        </div>
-      </section>
+        <figure class="cam44">
+          <img src="images/Antwerp44.jpg" alt="A photograph from Antwerp">
+        </figure>
 
+        <!-- 52 mixed naturally into camera roll -->
 
-      <!-- ========================================
-           PLACES I SAVED — PHOTOS 43–50
-      ========================================= -->
+        <figure class="cam52">
+          <img src="images/Antwerp52.jpg" alt="A personal photograph from Antwerp">
+        </figure>
 
-      <section class="section">
+      </div>
 
-        <div class="section-title">
-          <h2>PLACES I SAVED</h2>
-          <span>for next time ♡</span>
-        </div>
-
-        <div class="grid">
-
-          <figure class="saved1">
-            <img src="images/Antwerp43.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved2">
-            <img src="images/Antwerp44.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved3">
-            <img src="images/Antwerp45.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <div class="saved-list type">
-            <p>01 — ANTWERP</p>
-            <p>02 — BELGIUM</p>
-            <p>03 — PLACES / FOOD / SHOPS</p>
-            <p>04 — TO BE CONTINUED...</p>
-          </div>
-
-          <figure class="saved4">
-            <img src="images/Antwerp46.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved5">
-            <img src="images/Antwerp47.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved6">
-            <img src="images/Antwerp48.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved7">
-            <img src="images/Antwerp49.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <figure class="saved8">
-            <img src="images/Antwerp50.jpg" alt="A photograph from Antwerp" />
-          </figure>
-
-          <p class="hand ending-note">
-            Antwerp, see you again.
-          </p>
-
-        </div>
-      </section>
-
-    </main>
+    </section>
 
 
-    <!-- FOOTER -->
 
-    <footer>
-      <span>01 / ANTWERP</span>
+    <!-- PLACES I'VE BEEN -->
 
-      <a href="paris.html">
-        NEXT: PARIS →
-      </a>
-    </footer>
+    <section>
 
-  </body>
+      <div class="section-label">
+        <h2>PLACES I'VE BEEN</h2>
+        <p>ANTWERP / BELGIUM</p>
+      </div>
+
+      <div class="grid">
+
+        <p class="serif-note places-title">
+          places I've been
+        </p>
+
+        <figure class="place46">
+          <img src="images/Antwerp46.jpg" alt="A place from my Antwerp trip">
+        </figure>
+
+        <figure class="place47">
+          <img src="images/Antwerp47.jpg" alt="A place from my Antwerp trip">
+        </figure>
+
+        <figure class="place48">
+          <img src="images/Antwerp48.jpg" alt="A place from my Antwerp trip">
+        </figure>
+
+        <figure class="place49">
+          <img src="images/Antwerp49.jpg" alt="A place from my Antwerp trip">
+        </figure>
+
+        <figure class="place50">
+          <img src="images/Antwerp50.jpg" alt="A place from my Antwerp trip">
+        </figure>
+
+        <!-- 59 is personal, simply mixed into the journal -->
+
+        <figure class="place59">
+          <img src="images/Antwerp59.jpg" alt="A personal photograph from Antwerp">
+        </figure>
+
+        <figure class="place60">
+          <img src="images/Antwerp60.jpg" alt="A place I visited in Antwerp">
+        </figure>
+
+        <figure class="place61">
+          <img src="images/Antwerp61.jpg" alt="A place I visited in Antwerp">
+        </figure>
+
+        <figure class="place62">
+          <img src="images/Antwerp62.jpg" alt="A place I visited in Antwerp">
+        </figure>
+
+        <figure class="place63">
+          <img src="images/Antwerp63.jpg" alt="A place I visited in Antwerp">
+        </figure>
+
+        <p class="serif-note ending">
+          Antwerp.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer>
+
+    <span>
+      TRAVEL JOURNAL / 01
+    </span>
+
+    <span>
+      ANTWERP, BELGIUM
+    </span>
+
+    <a href="paris.html">
+      NEXT / PARIS →
+    </a>
+
+  </footer>
+
+
+</body>
 </html>
